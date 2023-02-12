@@ -24,11 +24,6 @@ const Form: React.FC = () => {
     navigate("/second-page");
   };
 
-  const clearStorageReload = () => {
-    localStorage.removeItem("userDataKey");
-    window.location.reload();
-  };
-
   useEffect(() => {
     const localUserData = JSON.parse(localStorage.getItem("userDataKey") || '{}');
     if (localUserData) {
@@ -73,10 +68,6 @@ const Form: React.FC = () => {
         <br />
         <button type="submit">Submit</button>
       </form>
-      <br />
-      <button onClick={clearStorageReload}>
-        Clear local storage and reload
-      </button>
     </div>
   );
 };
